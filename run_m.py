@@ -12,6 +12,7 @@ class ntime_code_name:
                 varibles-Datamembers
                 '''
                 try:
+                    pro_dir = str(file_name).split('\\')
                     #record current time
                     rc_t = time.strftime('>>> %I:%M:%S %p')   #type(c_t_n) <class 'str'>
                     #record current date
@@ -24,22 +25,22 @@ class ntime_code_name:
                     self.module_path = file_name
                     #this helps prevent default module_name
                     if self.module_name == 'run_m.py':
-                            raise ReqErr("\033[91m you necessary to add \033[94m __file__\033[0m \033[91m variable onto \033[94m ntime_code_name class\033[0m")
+                            raise ReqErr("\033[91m you necessary to add \033[94m ` __file__ ` \033[0m \033[91m variable onto \033[94m ntime_code_name class\033[0m")
                     
                     #file store operation
                     #currect time note # add data without erase and trancate the existsing data a also, create file wihout Filenot found error if is not exists
                     with open('ntime_date.py','a') as ntdo:
-                         ntdo.write(f"#  date : `{rc_d}`   module name :`{self.module_name}`   time :`{rc_t}`\n")
+                         ntdo.write(f"#  date : `{rc_d}` at directory : `{pro_dir[-2]}`  module name :`{self.module_name}`   time :`{rc_t}`\n")
 
                     """
                     `Terminal return`s
                     """
                     #time record into ntime_date
-                    print(f"\033[92m \n\t\t\tfilename and datetime was recored:) ---> \033[91m`{self.module_name}\033[0m` , \033[94m`{c_dt}`\033[0m \n\033[0m")
+                    print(f"\033[92m \ncurrent module and datetime was recored:) ---> \033[91m`{self.module_name}\033[0m` , \033[94m`{c_dt}`\033[0m \033[0m at package : \033[92m >>>\033[91m `{pro_dir[-2]}`\033[0m\n")
 
                 except ReqErr as request_error:
                       "you must do enter __file__ Argument into the ntime_code_name class"
-                      print(f"Error is : {request_error}")
+                      print(f"Error : {request_error}")
                 
                 except Exception:
                        print("\033[91m Error :  Check...Code...please...check...code \033[0m")

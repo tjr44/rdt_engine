@@ -85,7 +85,7 @@ class run_mysql_db:
                                      print(f''' 
                                 {record}
                                      ''')
-                        db_run_terminal()
+                                     
                         #close opened connections
                         cursor.close()
                         conn.close()

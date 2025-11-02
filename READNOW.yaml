@@ -8,3 +8,7 @@ esc = { #format is necessary (f"") if raw data bitsv(b'')
 'BLUE'     :   '\033[94m',
 'BLACK'    :   '\033[95m',
 }
+
+'''
+DataBase and file appendences now worked enhanced ___future____
+'''

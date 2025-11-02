@@ -27,6 +27,7 @@
 from collections import namedtuple
 import re
 import weakref
+from typing import Any
 
 from . import errors
 from .abstracts import MySQLCursorAbstract
